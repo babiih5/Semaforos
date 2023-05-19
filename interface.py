@@ -131,7 +131,65 @@ def tela_bot(estado):
       
         pygame.display.update()
 
+
+def tela_1v1(estado):
+    janela_bot = pygame.display.set_mode((1150,800))
+    pygame.display.set_caption("Jogo dos Semáforos")
+    janela_bot.blit(pvsp2,(0,0))
+
+    botaovoltar3 = pygame.Rect((250,621),(312,98))
+    botaoplay2 = pygame.Rect((594,621),(312,98))
+
+    area_j1 = pygame.Rect((206,344),(743,56))
+    area_j2 = pygame.Rect((206,495),(743,56))
+    #pygame.draw.rect(janela_bot, (173, 216, 230), (206, 495, 743, 56))    
+    jogador_atual = 1            
+    nome_jogador1 = ""
+    nome_jogador2 = ""
+    
+    while estado == "1v1":
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_RETURN:
+                    if jogador_atual == 1:
+                        jogador_atual = 2
+                    else:
+                        jogador_atual = 1
+                        
+                elif event.key == pygame.K_BACKSPACE:
+                    if jogador_atual == 1:
+                        nome_jogador1 = nome_jogador1[:-1]
+                    else:
+                        nome_jogador2 = nome_jogador2[:-1]
+                
+                else:
+                    if jogador_atual == 1:
+                        nome_jogador1 += event.unicode
+                    else:
+                        nome_jogador2 += event.unicode
+
+                
+        pygame.display.update()
+
+        fonte = pygame.font.Font(None, 46)
+        texto_jogador1 = fonte.render(nome_jogador1, True, (255,255,255))
+        texto_jogador2 = fonte.render(nome_jogador2,True,(255,255,255))
         
+
+        posicao_texto_jogador1 = texto_jogador1.get_rect(midleft=(1150 // 2 - 350, 800 // 2 - 23))
+        posicao_texto_jogador2 = texto_jogador1.get_rect(midleft=(1150 // 2 - 350, 800 // 2 + 124))
+
+        janela_bot.blit(texto_jogador1, posicao_texto_jogador1)
+        janela_bot.blit(texto_jogador2, posicao_texto_jogador2)
+      
+        pygame.display.update()
+
+
+
 def tela_JogoB(estado):
     janela_bot = pygame.display.set_mode((1150,800))
     pygame.display.set_caption("Jogo dos Semáforos")
@@ -154,5 +212,5 @@ def tela_JogoB(estado):
 
 # estado = "Bot"
 # tela_bot(estado)
-estado = "JogoB"
-tela_JogoB(estado)
+#estado = "1v1"
+#tela_1v1(estado)
