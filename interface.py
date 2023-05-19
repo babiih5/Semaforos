@@ -23,6 +23,17 @@ pvsp2 = pygame.transform.scale(pvsp1, (1150,800))
 jogo1 = pygame.image.load("JOGO.png")
 jogo2 = pygame.transform.scale(jogo1,(1150,800))
 
+## Peças
+verde1 = pygame.image.load("Verde.png")
+verde2 = pygame.transform.scale(verde1, (210,200))
+
+amarela1 = pygame.image.load("Amarelo.png")
+amarela2 = pygame.transform.scale(amarela1, (210,200))
+
+vermelho1 = pygame.image.load("Vermelho.png")
+vermelho2 = pygame.transform.scale(vermelho1, (210,200))
+
+
 # Verificação de tela
 estado = "Capa"
 
@@ -132,13 +143,14 @@ def tela_bot(estado):
       
         pygame.display.update()
 
-        
+
 def tela_JogoB(estado):
     janela_bot = pygame.display.set_mode((1150,800))
     pygame.display.set_caption("Jogo dos Semáforos")
     janela_bot.blit(jogo2,(0,0))
 
     #pygame.draw.rect(janela_bot, (173, 216, 230), (800, 163, 182, 158)) 
+    #janela_bot.blit(vermelho2,(367, 310))
 
     ## Areas de Jogo
     A1 = pygame.Rect((170, 163), (186, 158))
@@ -157,11 +169,28 @@ def tela_JogoB(estado):
     D2 = pygame.Rect((800, 336), (182, 138))
     D3 = pygame.Rect((800, 490), (182, 165))
 
+    #Estados
+    eA1 = ''
+
     while estado == "JogoB":
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
+
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if A1.collidepoint(pygame.mouse.get_pos()):
+                    if eA1 == '':
+                        janela_bot.blit(verde2,(170, 150))
+                        eA1 == 'G'
+                    elif eA1 == 'G':
+                        janela_bot.blit(amarela2,(170, 150))
+                        eA1 == 'Y'
+                    elif eA1 == 'Y':
+                        janela_bot.blit(vermelho2,(170, 150))
+                        eA1 == 'R'
+                    
+            
         pygame.display.update()
 
 
