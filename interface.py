@@ -64,6 +64,7 @@ def tela_menu(estado):
     botao1v1 = pygame.Rect((804, 457),(312,98))
 
 
+
     while estado == "Menu":
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -136,6 +137,25 @@ def tela_JogoB(estado):
     janela_bot = pygame.display.set_mode((1150,800))
     pygame.display.set_caption("Jogo dos Semáforos")
     janela_bot.blit(jogo2,(0,0))
+
+    #pygame.draw.rect(janela_bot, (173, 216, 230), (800, 163, 182, 158)) 
+
+    ## Areas de Jogo
+    A1 = pygame.Rect((170, 163), (186, 158))
+    A2 = pygame.Rect((170, 336), (186, 138))
+    A3 = pygame.Rect((170, 490), (186, 165))
+
+    B1 = pygame.Rect((367, 163), (205, 158))
+    B2 = pygame.Rect((367, 336), (205, 138))
+    B3 = pygame.Rect((367, 490), (205, 165))
+
+    C1 = pygame.Rect((587, 163), (197, 158))
+    C2 = pygame.Rect((587, 336), (197, 138))
+    C3 = pygame.Rect((587, 490), (197, 165))
+
+    D1 = pygame.Rect((800, 163), (182, 158))
+    D2 = pygame.Rect((800, 336), (182, 138))
+    D3 = pygame.Rect((800, 490), (182, 165))
 
     while estado == "JogoB":
         for event in pygame.event.get():
