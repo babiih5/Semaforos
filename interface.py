@@ -153,6 +153,12 @@ def tela_1v1(estado):
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
+            
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                if botaoplay2.collidepoint(pygame.mouse.get_pos()):
+                    estado = "Jogo1v1"
+                if botaovoltar3.collidepoint(pygame.mouse.get_pos()):
+                    estado = "Menu"
 
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RETURN:
