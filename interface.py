@@ -23,6 +23,9 @@ pvsp2 = pygame.transform.scale(pvsp1, (1150,800))
 jogo1 = pygame.image.load("JOGO.png")
 jogo2 = pygame.transform.scale(jogo1,(1150,800))
 
+win1 = pygame.image.load("win.png")
+win2 = pygame.transform.scale(win1,(1150,800))
+
 ## Peças
 verde1 = pygame.image.load("Verde.png")
 verde2 = pygame.transform.scale(verde1, (210,200))
@@ -48,7 +51,7 @@ def tela_inicial(estado):
             if event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
                 inicio=False
                 estado = "Menu"
-                
+
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
@@ -94,7 +97,7 @@ def tela_menu(estado):
         pygame.display.update()
 
         return estado
-    
+
 
 
 def tela_bot(estado):
@@ -121,26 +124,26 @@ def tela_bot(estado):
 
 
             elif event.type == pygame.KEYDOWN:
-                           
+
                 if event.key == pygame.K_BACKSPACE:
-                    
+
                     nome_jogador1 = nome_jogador1[:-1]
-                    
-                
+
+
                 else:
-                    
+
                     nome_jogador1 += event.unicode
-                 
+
         pygame.display.update()
 
         fonte = pygame.font.Font(None, 46)
         texto_jogador1 = fonte.render(nome_jogador1, True, (255,255,255))
-        
+
 
         posicao_texto_jogador1 = texto_jogador1.get_rect(midleft=(1150 // 2 - 350, 800 // 2 + 6))
 
         janela_bot.blit(texto_jogador1, posicao_texto_jogador1)
-      
+
         pygame.display.update()
 
 
@@ -155,17 +158,17 @@ def tela_1v1(estado):
 
     area_j1 = pygame.Rect((206,344),(743,56))
     area_j2 = pygame.Rect((206,495),(743,56))
-    #pygame.draw.rect(janela_bot, (173, 216, 230), (206, 495, 743, 56))    
-    jogador_atual = 1            
+    #pygame.draw.rect(janela_bot, (173, 216, 230), (206, 495, 743, 56))
+    jogador_atual = 1
     nome_jogador1 = ""
     nome_jogador2 = ""
-    
+
     while estado == "1v1":
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
-            
+
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 if botaoplay2.collidepoint(pygame.mouse.get_pos()):
                     estado = "Jogo1v1"
@@ -178,34 +181,92 @@ def tela_1v1(estado):
                         jogador_atual = 2
                     else:
                         jogador_atual = 1
-                        
+
                 elif event.key == pygame.K_BACKSPACE:
                     if jogador_atual == 1:
                         nome_jogador1 = nome_jogador1[:-1]
                     else:
                         nome_jogador2 = nome_jogador2[:-1]
-                
+
                 else:
                     if jogador_atual == 1:
                         nome_jogador1 += event.unicode
                     else:
                         nome_jogador2 += event.unicode
 
-                
+
         pygame.display.update()
 
         fonte = pygame.font.Font(None, 46)
         texto_jogador1 = fonte.render(nome_jogador1, True, (255,255,255))
         texto_jogador2 = fonte.render(nome_jogador2,True,(255,255,255))
-        
+
 
         posicao_texto_jogador1 = texto_jogador1.get_rect(midleft=(1150 // 2 - 350, 800 // 2 - 23))
         posicao_texto_jogador2 = texto_jogador1.get_rect(midleft=(1150 // 2 - 350, 800 // 2 + 124))
 
         janela_bot.blit(texto_jogador1, posicao_texto_jogador1)
         janela_bot.blit(texto_jogador2, posicao_texto_jogador2)
-      
+
         pygame.display.update()
+
+########
+
+def vitoria(eA1, eA2, eA3, eB1, eB2, eB3, eC1, eC2, eC3, eD1, eD2, eD3):
+
+    v =False
+
+    ## Linhas
+    if (eA1 == eB1 and eA1 == eC1 and eA1 != '' and eB1 != '' and eC1 != ''):
+        v = True
+    if (eB1 == eC1 and eB1 == eD1 and eB1 != '' and eC1 != '' and eD1 != ''):
+        v = True
+    
+    if (eA2 == eB2 and eA2 == eC2 and eA2 != '' and eB2 != '' and eC2 != ''):
+        v = True
+    if (eB2 == eC2 and eB2 == eD2 and eB2 != '' and eC2 != '' and eD2 != ''):
+        v = True
+
+    if (eA3 == eB3 and eA3 == eC3 and eA3 != '' and eB3 != '' and eC3 != ''):
+        v = True
+    if (eB3 == eC3 and eB3 == eD3 and eB3 != '' and eC3 != '' and eD3 != ''):
+        v = True
+    
+
+    ## Colunas
+    if (eA1 == eA2 and eA1 == eA3 and eA1 != '' and eA2 != '' and eA3 != ''):
+        v = True
+    
+    if (eB1 == eB2 and eB1 == eB3 and eB1 != '' and eB2 != '' and eB3 != ''):
+        v = True
+
+    if (eC1 == eC2 and eC1 == eC3 and eC1 != '' and eC2 != '' and eC3 != ''):
+        v = True
+
+    if (eD1 == eD2 and eD1 == eD3 and eD1 != '' and eD2 != '' and eD3 != ''):
+        v = True
+
+    ## Diagonais
+    if (eA1 == eB2 and eA1 == eC3 and eA1 != '' and eB2 != '' and eC3 != ''):
+        v = True
+    if (eB1 == eC2 and eB1== eD3 and eB1 != '' and eC2 != '' and eD3 != ''):
+        v = True
+    if (eC1 == eB2 and eC1 == eA3 and eC1 != '' and eB2 != '' and eA3 != ''):
+        v = True
+    if (eD1 == eC2 and eD1 == eB3 and eD1 != '' and eC2 != '' and eB3 != ''):
+        v = True
+
+
+
+    if (v == True):
+        print("\n\nFim do jogo! Vitória")
+
+
+        return True
+
+    return False
+        
+    
 
 
 def changeplayer(p1, p2, janela_bot):
@@ -237,10 +298,11 @@ def tela_JogoB(estado):
 
     p1 = False
     p2 = False
+    p_win = ''
 
+    win =  False
 
-
-    #pygame.draw.rect(janela_bot, (173, 216, 230), (400, 735, 400, 45)) 
+    #pygame.draw.rect(janela_bot, (173, 216, 230), (400, 735, 400, 45))
     #janela_bot.blit(vermelho2,(367, 310))
 
     ## Areas de Jogo
@@ -283,7 +345,7 @@ def tela_JogoB(estado):
                 pygame.quit()
                 quit()
 
-
+            changeplayer(p1, p2, janela_bot)
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if A1.collidepoint(pygame.mouse.get_pos()):
@@ -300,7 +362,7 @@ def tela_JogoB(estado):
                             changeplayer(p1, p2, janela_bot)
                             p2 = True
                             p1 = False
-                            
+
                     elif eA1 == 'G':
                         pygame.draw.rect(janela_bot, (197, 188, 151), (170, 163, 180, 150))
                         janela_bot.blit(amarela2,(170, 150))
@@ -422,7 +484,7 @@ def tela_JogoB(estado):
                             changeplayer(p1, p2, janela_bot)
                             p2 = True
                             p1 = False
-                    
+
 #################### B
                 if B1.collidepoint(pygame.mouse.get_pos()):
                     if eB1 == '':
@@ -700,7 +762,7 @@ def tela_JogoB(estado):
                             p2 = True
                             p1 = False
 
-            
+
 
 #################### D
                 if D1.collidepoint(pygame.mouse.get_pos()):
@@ -840,12 +902,74 @@ def tela_JogoB(estado):
                             p2 = True
                             p1 = False
 
+
+               
+
+                win = vitoria(eA1, eA2, eA3, eB1, eB2, eB3, eC1, eC2, eC3, eD1, eD2, eD3)
+                
+                
+                if(win == True):
+
+                    
+                    A1 = None
+                    A2 = None
+                    A3 = None
+                    B1 = None
+                    B2 = None
+                    B3 = None
+                    C1 = None
+                    C2 = None
+                    C3 = None
+                    D1 = None
+                    D2 = None
+                    D3 = None
+                    
+                    janela_bot = pygame.display.set_mode((1150,800))
+                    pygame.display.set_caption("Jogo dos Semáforos")
+                    janela_bot.blit(win2,(0,0))
+
+                    if (p1 == True):
+                        p_win = 'Player 1'
+                    elif (p2 == True):
+                        p_win = 'Player 2'
+
+                    fonte = pygame.font.Font(None, 46)
+                    texto = fonte.render(p_win, True, (255,255,255))
+
+                    pygame.draw.rect(janela_bot, (222, 197, 119), (400, 735, 400, 45))
+
+                    pos = texto.get_rect(midleft=(1150 // 2 - 30, 800 // 2 + 360))
+
+                    janela_bot.blit(texto, pos)
+
+                    estado = "Vitoria"
+
+                    tela_vitoria(estado)
+
+
                 
 
         pygame.display.update()
 
-estado = "JogoB"
-tela_JogoB(estado)
+
+def tela_vitoria(estado):
+    janela_bot = pygame.display.set_mode((1150,800))
+    pygame.display.set_caption("Jogo dos Semáforos")
+    janela_bot.blit(win2,(0,0))
+
+    while estado == "Vitoria":
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+            
+            
+        
+
+
+if (estado != "Vitoria"):
+    estado = "JogoB"
+    tela_JogoB(estado)
 
 # while True:
 #     if estado == "Capa":
