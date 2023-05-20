@@ -208,14 +208,39 @@ def tela_1v1(estado):
         pygame.display.update()
 
 
+def changeplayer(p1, p2, janela_bot):
+    if(p1 == False):
+        fonte = pygame.font.Font(None, 46)
+        texto_p1 = fonte.render("Player 1", True, (255,255,255))
 
+        pygame.draw.rect(janela_bot, (222, 197, 119), (400, 735, 400, 45))
+
+        pos1 = texto_p1.get_rect(midleft=(1150 // 2 - 30, 800 // 2 + 360))
+
+        janela_bot.blit(texto_p1, pos1)
+
+    elif(p2 == False):
+        fonte = pygame.font.Font(None, 46)
+        texto_p2 = fonte.render("Player 2", True, (255,255,255))
+
+        pygame.draw.rect(janela_bot, (222, 197, 119), (400, 735, 400, 45))
+
+        pos2 = texto_p2.get_rect(midleft=(1150 // 2 - 30, 800 // 2 + 360))
+
+        janela_bot.blit(texto_p2, pos2)
 
 def tela_JogoB(estado):
     janela_bot = pygame.display.set_mode((1150,800))
     pygame.display.set_caption("Jogo dos Semáforos")
     janela_bot.blit(jogo2,(0,0))
 
-    #pygame.draw.rect(janela_bot, (173, 216, 230), (800, 163, 182, 158)) 
+
+    p1 = False
+    p2 = False
+
+
+
+    #pygame.draw.rect(janela_bot, (173, 216, 230), (400, 735, 400, 45)) 
     #janela_bot.blit(vermelho2,(367, 310))
 
     ## Areas de Jogo
@@ -237,6 +262,20 @@ def tela_JogoB(estado):
 
     #Estados
     eA1 = ''
+    eA2 = ''
+    eA3 = ''
+
+    eB1 = ''
+    eB2 = ''
+    eB3 = ''
+
+    eC1 = ''
+    eC2 = ''
+    eC3 = ''
+
+    eD1 = ''
+    eD2 = ''
+    eD3 = ''
 
     while estado == "JogoB":
         for event in pygame.event.get():
@@ -244,22 +283,569 @@ def tela_JogoB(estado):
                 pygame.quit()
                 quit()
 
+
+
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if A1.collidepoint(pygame.mouse.get_pos()):
                     if eA1 == '':
                         janela_bot.blit(verde2,(170, 150))
-                        eA1 == 'G'
+                        eA1 = 'G'
+
+                        if (p1 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p1 = True
+                            p2 = False
+
+                        elif (p2 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p2 = True
+                            p1 = False
+                            
                     elif eA1 == 'G':
+                        pygame.draw.rect(janela_bot, (197, 188, 151), (170, 163, 180, 150))
                         janela_bot.blit(amarela2,(170, 150))
-                        eA1 == 'Y'
+                        eA1 = 'Y'
+
+                        if (p1 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p1 = True
+                            p2 = False
+
+                        elif (p2 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p2 = True
+                            p1 = False
+
                     elif eA1 == 'Y':
+                        pygame.draw.rect(janela_bot, (197, 188, 151), (170, 163, 180, 150))
                         janela_bot.blit(vermelho2,(170, 150))
-                        eA1 == 'R'
+                        eA1 = 'R'
+
+                        if (p1 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p1 = True
+                            p2 = False
+
+                        elif (p2 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p2 = True
+                            p1 = False
+
+
+                if A2.collidepoint(pygame.mouse.get_pos()):
+                    if eA2 == '':
+                        janela_bot.blit(verde2,(170, 310))
+                        eA2 = 'G'
+
+                        if (p1 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p1 = True
+                            p2 = False
+
+                        elif (p2 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p2 = True
+                            p1 = False
+
+                    elif eA2 == 'G':
+                        pygame.draw.rect(janela_bot, (197, 188, 151), (170, 336, 180, 130))
+                        janela_bot.blit(amarela2,(170, 310))
+                        eA2 = 'Y'
+
+                        if (p1 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p1 = True
+                            p2 = False
+
+                        elif (p2 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p2 = True
+                            p1 = False
+
+                    elif eA2 == 'Y':
+                        pygame.draw.rect(janela_bot, (197, 188, 151), (170, 336, 180, 130))
+                        janela_bot.blit(vermelho2,(170, 310))
+                        eA2 = 'R'
+
+                        if (p1 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p1 = True
+                            p2 = False
+
+                        elif (p2 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p2 = True
+                            p1 = False
+
+
+                if A3.collidepoint(pygame.mouse.get_pos()):
+                    if eA3 == '':
+                        janela_bot.blit(verde2,(170, 470))
+                        eA3 = 'G'
+
+                        if (p1 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p1 = True
+                            p2 = False
+
+                        elif (p2 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p2 = True
+                            p1 = False
+
+                    elif eA3 == 'G':
+                        pygame.draw.rect(janela_bot, (197, 188, 151), (170, 500, 180, 130))
+                        janela_bot.blit(amarela2,(170, 470))
+                        eA3 = 'Y'
+
+                        if (p1 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p1 = True
+                            p2 = False
+
+                        elif (p2 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p2 = True
+                            p1 = False
+
+                    elif eA3 == 'Y':
+                        pygame.draw.rect(janela_bot, (197, 188, 151), (170, 500, 180, 130))
+                        janela_bot.blit(vermelho2,(170, 470))
+                        eA3 = 'R'
+
+                        if (p1 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p1 = True
+                            p2 = False
+
+                        elif (p2 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p2 = True
+                            p1 = False
                     
+#################### B
+                if B1.collidepoint(pygame.mouse.get_pos()):
+                    if eB1 == '':
+                        janela_bot.blit(verde2,(367, 150))
+                        eB1 = 'G'
+
+                        if (p1 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p1 = True
+                            p2 = False
+
+                        elif (p2 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p2 = True
+                            p1 = False
+
+                    elif eB1 == 'G':
+                        pygame.draw.rect(janela_bot, (197, 188, 151), (370, 163, 180, 150))
+                        janela_bot.blit(amarela2,(367, 150))
+                        eB1 = 'Y'
+
+                        if (p1 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p1 = True
+                            p2 = False
+
+                        elif (p2 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p2 = True
+                            p1 = False
+
+                    elif eB1 == 'Y':
+                        pygame.draw.rect(janela_bot, (197, 188, 151), (370, 163, 180, 150))
+                        janela_bot.blit(vermelho2,(367, 150))
+                        eB1 = 'R'
+
+                        if (p1 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p1 = True
+                            p2 = False
+
+                        elif (p2 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p2 = True
+                            p1 = False
+
+
+                if B2.collidepoint(pygame.mouse.get_pos()):
+                    if eB2 == '':
+                        janela_bot.blit(verde2,(367, 310))
+                        eB2 = 'G'
+
+                        if (p1 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p1 = True
+                            p2 = False
+
+                        elif (p2 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p2 = True
+                            p1 = False
+
+                    elif eB2 == 'G':
+                        pygame.draw.rect(janela_bot, (197, 188, 151), (370, 336, 180, 130))
+                        janela_bot.blit(amarela2,(367, 310))
+                        eB2 = 'Y'
+
+                        if (p1 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p1 = True
+                            p2 = False
+
+                        elif (p2 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p2 = True
+                            p1 = False
+
+                    elif eB2 == 'Y':
+                        pygame.draw.rect(janela_bot, (197, 188, 151), (370, 336, 180, 130))
+                        janela_bot.blit(vermelho2,(367, 310))
+                        eB2 = 'R'
+
+                        if (p1 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p1 = True
+                            p2 = False
+
+                        elif (p2 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p2 = True
+                            p1 = False
+
+
+                if B3.collidepoint(pygame.mouse.get_pos()):
+                    if eB3 == '':
+                        janela_bot.blit(verde2,(367, 470))
+                        eB3 = 'G'
+
+                        if (p1 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p1 = True
+                            p2 = False
+
+                        elif (p2 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p2 = True
+                            p1 = False
+
+                    elif eB3 == 'G':
+                        pygame.draw.rect(janela_bot, (197, 188, 151), (370, 500, 180, 130))
+                        janela_bot.blit(amarela2,(367, 470))
+                        eB3 = 'Y'
+
+                        if (p1 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p1 = True
+                            p2 = False
+
+                        elif (p2 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p2 = True
+                            p1 = False
+
+                    elif eB3 == 'Y':
+                        pygame.draw.rect(janela_bot, (197, 188, 151), (370, 500, 180, 130))
+                        janela_bot.blit(vermelho2,(367, 470))
+                        eB3 = 'R'
+
+                        if (p1 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p1 = True
+                            p2 = False
+
+                        elif (p2 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p2 = True
+                            p1 = False
+
+
+#################### C
+                if C1.collidepoint(pygame.mouse.get_pos()):
+                    if eC1 == '':
+                        janela_bot.blit(verde2,(587, 150))
+                        eC1 = 'G'
+
+                        if (p1 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p1 = True
+                            p2 = False
+
+                        elif (p2 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p2 = True
+                            p1 = False
+
+                    elif eC1 == 'G':
+                        pygame.draw.rect(janela_bot, (197, 188, 151), (595, 163, 180, 150))
+                        janela_bot.blit(amarela2,(587, 150))
+                        eC1 = 'Y'
+
+                        if (p1 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p1 = True
+                            p2 = False
+
+                        elif (p2 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p2 = True
+                            p1 = False
+
+                    elif eC1 == 'Y':
+                        pygame.draw.rect(janela_bot, (197, 188, 151), (595, 163, 180, 150))
+                        janela_bot.blit(vermelho2,(587, 150))
+                        eC1 = 'R'
+
+                        if (p1 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p1 = True
+                            p2 = False
+
+                        elif (p2 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p2 = True
+                            p1 = False
+
+
+                if C2.collidepoint(pygame.mouse.get_pos()):
+                    if eC2 == '':
+                        janela_bot.blit(verde2,(587, 310))
+                        eC2 = 'G'
+
+                        if (p1 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p1 = True
+                            p2 = False
+
+                        elif (p2 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p2 = True
+                            p1 = False
+
+                    elif eC2 == 'G':
+                        pygame.draw.rect(janela_bot, (197, 188, 151), (595, 336, 180, 130))
+                        janela_bot.blit(amarela2,(587, 310))
+                        eC2 = 'Y'
+
+                        if (p1 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p1 = True
+                            p2 = False
+
+                        elif (p2 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p2 = True
+                            p1 = False
+
+                    elif eC2 == 'Y':
+                        pygame.draw.rect(janela_bot, (197, 188, 151), (595, 336, 180, 130))
+                        janela_bot.blit(vermelho2,(587, 310))
+                        eC2 = 'R'
+
+                        if (p1 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p1 = True
+                            p2 = False
+
+                        elif (p2 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p2 = True
+                            p1 = False
+
+
+                if C3.collidepoint(pygame.mouse.get_pos()):
+                    if eC3 == '':
+                        janela_bot.blit(verde2,(587, 470))
+                        eC3 = 'G'
+
+                        if (p1 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p1 = True
+                            p2 = False
+
+                        elif (p2 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p2 = True
+                            p1 = False
+
+                    elif eC3 == 'G':
+                        pygame.draw.rect(janela_bot, (197, 188, 151), (595, 500, 180, 130))
+                        janela_bot.blit(amarela2,(587, 470))
+                        eC3 = 'Y'
+
+                        if (p1 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p1 = True
+                            p2 = False
+
+                        elif (p2 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p2 = True
+                            p1 = False
+
+                    elif eC3 == 'Y':
+                        pygame.draw.rect(janela_bot, (197, 188, 151), (595, 500, 180, 130))
+                        janela_bot.blit(vermelho2,(587, 470))
+                        eC3 = 'R'
+
+                        if (p1 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p1 = True
+                            p2 = False
+
+                        elif (p2 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p2 = True
+                            p1 = False
+
             
+
+#################### D
+                if D1.collidepoint(pygame.mouse.get_pos()):
+                    if eD1 == '':
+                        janela_bot.blit(verde2,(780, 150))
+                        eD1 = 'G'
+
+                        if (p1 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p1 = True
+                            p2 = False
+
+                        elif (p2 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p2 = True
+                            p1 = False
+
+                    elif eD1 == 'G':
+                        pygame.draw.rect(janela_bot, (197, 188, 151), (830, 163, 180, 150))
+                        janela_bot.blit(amarela2,(780, 150))
+                        eD1 = 'Y'
+
+                        if (p1 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p1 = True
+                            p2 = False
+
+                        elif (p2 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p2 = True
+                            p1 = False
+
+                    elif eD1 == 'Y':
+                        pygame.draw.rect(janela_bot, (197, 188, 151), (830, 163, 180, 150))
+                        janela_bot.blit(vermelho2,(780, 150))
+                        eD1 = 'R'
+
+                        if (p1 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p1 = True
+                            p2 = False
+
+                        elif (p2 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p2 = True
+                            p1 = False
+
+
+                if D2.collidepoint(pygame.mouse.get_pos()):
+                    if eD2 == '':
+                        janela_bot.blit(verde2,(780, 310))
+                        eD2 = 'G'
+
+                        if (p1 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p1 = True
+                            p2 = False
+
+                        elif (p2 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p2 = True
+                            p1 = False
+
+                    elif eD2 == 'G':
+                        pygame.draw.rect(janela_bot, (197, 188, 151), (830, 336, 180, 130))
+                        janela_bot.blit(amarela2,(780, 310))
+                        eD2 = 'Y'
+
+                        if (p1 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p1 = True
+                            p2 = False
+
+                        elif (p2 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p2 = True
+                            p1 = False
+
+                    elif eD2 == 'Y':
+                        pygame.draw.rect(janela_bot, (197, 188, 151), (830, 336, 180, 130))
+                        janela_bot.blit(vermelho2,(780, 310))
+                        eD2 = 'R'
+
+                        if (p1 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p1 = True
+                            p2 = False
+
+                        elif (p2 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p2 = True
+                            p1 = False
+
+
+                if D3.collidepoint(pygame.mouse.get_pos()):
+                    if eD3 == '':
+                        janela_bot.blit(verde2,(780, 470))
+                        eD3 = 'G'
+
+                        if (p1 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p1 = True
+                            p2 = False
+
+                        elif (p2 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p2 = True
+                            p1 = False
+
+                    elif eD3 == 'G':
+                        pygame.draw.rect(janela_bot, (197, 188, 151), (830, 500, 180, 130))
+                        janela_bot.blit(amarela2,(780, 470))
+                        eD3 = 'Y'
+
+                        if (p1 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p1 = True
+                            p2 = False
+
+                        elif (p2 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p2 = True
+                            p1 = False
+
+                    elif eD3 == 'Y':
+                        pygame.draw.rect(janela_bot, (197, 188, 151), (830, 500, 180, 130))
+                        janela_bot.blit(vermelho2,(780, 470))
+                        eD3 = 'R'
+
+                        if (p1 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p1 = True
+                            p2 = False
+
+                        elif (p2 == False):
+                            changeplayer(p1, p2, janela_bot)
+                            p2 = True
+                            p1 = False
+
+                
+
         pygame.display.update()
 
-
+estado = "JogoB"
+tela_JogoB(estado)
 
 # while True:
 #     if estado == "Capa":
