@@ -1007,8 +1007,115 @@ def tela_JogoA(estado):
                             eB3 = 'R'
                             valida = True
 
-                    
+                    ###### C
+                    if(casa == 'C1'):
+                        if(eC1 == ''):
+                            janela_bot.blit(verde2,(587, 150))
+                            eC1 = 'G'
+                            valida = True
 
+                        elif(eC1 == 'G'):
+                            pygame.draw.rect(janela_bot, (197, 188, 151), (595, 163, 180, 150))
+                            janela_bot.blit(amarela2,(587, 150))
+                            eC1 = 'Y'
+                            valida = True
+
+                        elif(eC1 == 'Y'):
+                            pygame.draw.rect(janela_bot, (197, 188, 151), (595, 163, 180, 150))
+                            janela_bot.blit(vermelho2,(587, 150))
+                            eC1 = 'R'
+                            valida = True
+                    
+                    if(casa == 'C2'):
+                        if(eC2 == ''):
+                            janela_bot.blit(verde2,(587, 310))
+                            eC2 = 'G'
+                            valida = True
+
+                        elif(eC2 == 'G'):
+                            pygame.draw.rect(janela_bot, (197, 188, 151), (595, 336, 180, 130))
+                            janela_bot.blit(amarela2,(587, 310))
+                            eC2 = 'Y'
+                            valida = True
+
+                        elif(eC2 == 'Y'):
+                            pygame.draw.rect(janela_bot, (197, 188, 151), (595, 336, 180, 130))
+                            janela_bot.blit(vermelho2,(587, 310))
+                            eC2 = 'R'
+                            valida = True
+                    
+                    if(casa == 'C3'):
+                        if(eC3 == ''):
+                            janela_bot.blit(verde2,(587, 470))
+                            eC3 = 'G'
+                            valida = True
+
+                        elif(eC3 == 'G'):
+                            pygame.draw.rect(janela_bot, (197, 188, 151), (595, 500, 180, 130))
+                            janela_bot.blit(amarela2,(587, 470))
+                            eC3 = 'Y'
+                            valida = True
+
+                        elif(eC3 == 'Y'):
+                            pygame.draw.rect(janela_bot, (197, 188, 151), (595, 500, 180, 130))
+                            janela_bot.blit(vermelho2,(587, 470))
+                            eC3 = 'R'
+                            valida = True
+                    
+                    ###### D
+                    if(casa == 'D1'):
+                        if(eD1 == ''):
+                            janela_bot.blit(verde2,(780, 150))
+                            eD1 = 'G'
+                            valida = True
+
+                        elif(eD1 == 'G'):
+                            pygame.draw.rect(janela_bot, (197, 188, 151), (830, 163, 180, 150))
+                            janela_bot.blit(amarela2,(780, 150))
+                            eD1 = 'Y'
+                            valida = True
+
+                        elif(eD1 == 'Y'):
+                            pygame.draw.rect(janela_bot, (197, 188, 151), (830, 163, 180, 150))
+                            janela_bot.blit(vermelho2,(780, 150))
+                            eD1 = 'R'
+                            valida = True
+                    
+                    if(casa == 'D2'):
+                        if(eD2 == ''):
+                            janela_bot.blit(verde2,(780, 310))
+                            eD2 = 'G'
+                            valida = True
+
+                        elif(eD2 == 'G'):
+                            pygame.draw.rect(janela_bot, (197, 188, 151), (830, 336, 180, 130))
+                            janela_bot.blit(amarela2,(780, 310))
+                            eD2 = 'Y'
+                            valida = True
+
+                        elif(eD2 == 'Y'):
+                            pygame.draw.rect(janela_bot, (197, 188, 151), (830, 336, 180, 130))
+                            janela_bot.blit(vermelho2,(780, 310))
+                            eD2 = 'R'
+                            valida = True
+                    
+                    if(casa == 'D3'):
+                        if(eD3 == ''):
+                            janela_bot.blit(verde2,(780, 470))
+                            eD3 = 'G'
+                            valida = True
+
+                        elif(eD3 == 'G'):
+                            pygame.draw.rect(janela_bot, (197, 188, 151), (830, 500, 180, 130))
+                            janela_bot.blit(amarela2,(780, 470))
+                            eD3 = 'Y'
+                            valida = True
+
+                        elif(eD3 == 'Y'):
+                            pygame.draw.rect(janela_bot, (197, 188, 151), (830, 500, 180, 130))
+                            janela_bot.blit(vermelho2,(780, 470))
+                            eD3 = 'R'
+                            valida = True
                         
 
                 p1 = False
@@ -1802,7 +1909,7 @@ def tela_vitoria(estado, p_win):
 
         pygame.draw.rect(janela_bot, (222, 197, 119), (400, 735, 400, 45))
 
-        pos = texto.get_rect(midleft=(1150 // 2 - 30, 800 // 2 + 360))
+        pos = texto.get_rect(midleft=(1150 // 2 - 40, 800 // 2 + 360))
 
         janela_bot.blit(texto, pos)
 
