@@ -39,8 +39,6 @@ vermelho1 = pygame.image.load("Vermelho.png")
 vermelho2 = pygame.transform.scale(vermelho1, (210,200))
 
 
-# Verificação de tela
-estado = "Capa"
 
 def tela_inicial(estado):
     janela_capa = pygame.display.set_mode((1150,800))
