@@ -88,6 +88,7 @@ def tela_menu(estado):
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if botaoregras.collidepoint(pygame.mouse.get_pos()):
                     estado = "Regras"
+                    tela_regras(estado)
                     
                 if botaoBot.collidepoint(pygame.mouse.get_pos()):
                     estado = "Bot"
@@ -103,7 +104,27 @@ def tela_menu(estado):
         pygame.display.update()
 
 
+def tela_regras(estado):
+    janela_regras = pygame.display.set_mode((1150,800))
+    pygame.display.set_caption("Jogo dos Semáforos")
+    janela_regras.blit(regras2,(0,0))
 
+    ## Botao voltar
+    voltar = pygame.Rect((419,672),(312,98))
+
+
+    while estado == "Regras":
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+        
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                    if voltar.collidepoint(pygame.mouse.get_pos()):
+                        estado = "Menu"
+                        tela_menu(estado)
+
+        pygame.display.update()
 
 def tela_bot(estado):
     janela_bot = pygame.display.set_mode((1150,800))
@@ -1816,14 +1837,3 @@ def tela_vitoria(estado, p_win):
 
 estado = "Capa"
 tela_inicial(estado)
-
-# while True:
-#     if estado == "Capa":
-#         estado = tela_inicial(estado)
-#     else:
-#         estado = tela_menu(estado)
-
-# estado = "Bot"
-# tela_bot(estado)
-#estado = "1v1"
-#tela_1v1(estado)
