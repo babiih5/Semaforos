@@ -300,6 +300,8 @@ def tela_JogoA(estado):
                                 p2 = True
                                 p1 = False
 
+                            
+
                         elif eA1 == 'G':
                             pygame.draw.rect(janela_bot, (197, 188, 151), (170, 163, 180, 150))
                             janela_bot.blit(amarela2,(170, 150))
@@ -329,6 +331,8 @@ def tela_JogoA(estado):
                                 changeplayer(p1, p2, janela_bot)
                                 p2 = True
                                 p1 = False
+
+                        win = vitoria(eA1, eA2, eA3, eB1, eB2, eB3, eC1, eC2, eC3, eD1, eD2, eD3)
 
 
                     if A2.collidepoint(pygame.mouse.get_pos()):
@@ -376,6 +380,8 @@ def tela_JogoA(estado):
                                 p2 = True
                                 p1 = False
 
+                        win = vitoria(eA1, eA2, eA3, eB1, eB2, eB3, eC1, eC2, eC3, eD1, eD2, eD3)
+
 
                     if A3.collidepoint(pygame.mouse.get_pos()):
                         if eA3 == '':
@@ -421,6 +427,8 @@ def tela_JogoA(estado):
                                 changeplayer(p1, p2, janela_bot)
                                 p2 = True
                                 p1 = False
+
+                        win = vitoria(eA1, eA2, eA3, eB1, eB2, eB3, eC1, eC2, eC3, eD1, eD2, eD3)
 
     #################### B
                     if B1.collidepoint(pygame.mouse.get_pos()):
@@ -468,6 +476,8 @@ def tela_JogoA(estado):
                                 p2 = True
                                 p1 = False
 
+                        win = vitoria(eA1, eA2, eA3, eB1, eB2, eB3, eC1, eC2, eC3, eD1, eD2, eD3)
+
 
                     if B2.collidepoint(pygame.mouse.get_pos()):
                         if eB2 == '':
@@ -514,6 +524,8 @@ def tela_JogoA(estado):
                                 p2 = True
                                 p1 = False
 
+                        win = vitoria(eA1, eA2, eA3, eB1, eB2, eB3, eC1, eC2, eC3, eD1, eD2, eD3)
+
 
                     if B3.collidepoint(pygame.mouse.get_pos()):
                         if eB3 == '':
@@ -544,6 +556,7 @@ def tela_JogoA(estado):
                                 changeplayer(p1, p2, janela_bot)
                                 p2 = True
                                 p1 = False
+            
 
                         elif eB3 == 'Y':
                             pygame.draw.rect(janela_bot, (197, 188, 151), (370, 500, 180, 130))
@@ -559,6 +572,8 @@ def tela_JogoA(estado):
                                 changeplayer(p1, p2, janela_bot)
                                 p2 = True
                                 p1 = False
+
+                        win = vitoria(eA1, eA2, eA3, eB1, eB2, eB3, eC1, eC2, eC3, eD1, eD2, eD3)
 
 
     #################### C
@@ -607,6 +622,8 @@ def tela_JogoA(estado):
                                 p2 = True
                                 p1 = False
 
+                        win = vitoria(eA1, eA2, eA3, eB1, eB2, eB3, eC1, eC2, eC3, eD1, eD2, eD3)
+
 
                     if C2.collidepoint(pygame.mouse.get_pos()):
                         if eC2 == '':
@@ -653,6 +670,8 @@ def tela_JogoA(estado):
                                 p2 = True
                                 p1 = False
 
+                        win = vitoria(eA1, eA2, eA3, eB1, eB2, eB3, eC1, eC2, eC3, eD1, eD2, eD3)
+
 
                     if C3.collidepoint(pygame.mouse.get_pos()):
                         if eC3 == '':
@@ -698,6 +717,8 @@ def tela_JogoA(estado):
                                 changeplayer(p1, p2, janela_bot)
                                 p2 = True
                                 p1 = False
+
+                        win = vitoria(eA1, eA2, eA3, eB1, eB2, eB3, eC1, eC2, eC3, eD1, eD2, eD3)
 
 
 
@@ -747,6 +768,7 @@ def tela_JogoA(estado):
                                 p2 = True
                                 p1 = False
 
+                        win = vitoria(eA1, eA2, eA3, eB1, eB2, eB3, eC1, eC2, eC3, eD1, eD2, eD3)
 
                     if D2.collidepoint(pygame.mouse.get_pos()):
                         if eD2 == '':
@@ -793,6 +815,7 @@ def tela_JogoA(estado):
                                 p2 = True
                                 p1 = False
 
+                        win = vitoria(eA1, eA2, eA3, eB1, eB2, eB3, eC1, eC2, eC3, eD1, eD2, eD3)
 
                     if D3.collidepoint(pygame.mouse.get_pos()):
                         if eD3 == '':
@@ -839,7 +862,7 @@ def tela_JogoA(estado):
                                 p2 = True
                                 p1 = False
 
-                
+                        win = vitoria(eA1, eA2, eA3, eB1, eB2, eB3, eC1, eC2, eC3, eD1, eD2, eD3)
 
             
 
@@ -996,7 +1019,7 @@ def tela_JogoA(estado):
 
                 if (p1 == True):
                     p_win = 'Player 1'
-                elif (p2 == True):
+                else:
                     p_win = 'BOT Diogo'
 
 
@@ -1735,12 +1758,11 @@ def tela_JogoB(estado):
                     tela_vitoria(estado, p_win)
 
 
-                
-
         pygame.display.update()
 
 
 def tela_vitoria(estado, p_win):
+    print(p_win)
     janela_bot = pygame.display.set_mode((1150,800))
     pygame.display.set_caption("Jogo dos Semáforos")
     janela_bot.blit(win2,(0,0))
@@ -1756,12 +1778,6 @@ def tela_vitoria(estado, p_win):
     #pygame.draw.rect(janela_bot, (173, 216, 230), (817, 146, 312, 98))
 
     while estado == "Vitoria":
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                quit()
-
-        
         fonte = pygame.font.Font(None, 46)
         texto = fonte.render(p_win, True, (255,255,255))
 
@@ -1771,14 +1787,23 @@ def tela_vitoria(estado, p_win):
 
         janela_bot.blit(texto, pos)
 
-        if event.type == pygame.MOUSEBUTTONDOWN:
-                if menu.collidepoint(pygame.mouse.get_pos()):
-                    estado = "Menu"
-                    tela_menu(estado)
-                
-                if sair.collidepoint(pygame.mouse.get_pos()):
-                    pygame.quit
-                    quit()
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                            if menu.collidepoint(pygame.mouse.get_pos()):
+                                estado = "Menu"
+                                tela_menu(estado)
+                            
+                            if sair.collidepoint(pygame.mouse.get_pos()):
+                                pygame.quit
+                                quit()
+        
+        
+
+        
         
         pygame.display.update()
 
