@@ -49,15 +49,14 @@ def tela_inicial(estado):
     while estado == "Capa":
         for event in pygame.event.get():
             if event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
-                inicio=False
                 estado = "Menu"
+                tela_menu(estado)
 
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
 
         pygame.display.update()
-        return estado
 
 
 def tela_menu(estado):
@@ -87,16 +86,20 @@ def tela_menu(estado):
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if botaoregras.collidepoint(pygame.mouse.get_pos()):
                     estado = "Regras"
+                    
                 if botaoBot.collidepoint(pygame.mouse.get_pos()):
                     estado = "Bot"
+                    tela_bot(estado)
+
                 if botao1v1.collidepoint(pygame.mouse.get_pos()):
                     estado = "1v1"
+                    tela_1v1(estado)
+
                 if botaoSair.collidepoint(pygame.mouse.get_pos()):
                     pygame.quit
                     quit()
         pygame.display.update()
 
-        return estado
 
 
 
@@ -118,9 +121,12 @@ def tela_bot(estado):
 
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 if botaoplay1.collidepoint(pygame.mouse.get_pos()):
-                    estado = "JogoB"
+                    estado = "JogoA"
+                    
                 if botaovoltar2.collidepoint(pygame.mouse.get_pos()):
                     estado = "Menu"
+                    tela_menu(estado)
+                    
 
 
             elif event.type == pygame.KEYDOWN:
@@ -171,9 +177,12 @@ def tela_1v1(estado):
 
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 if botaoplay2.collidepoint(pygame.mouse.get_pos()):
-                    estado = "Jogo1v1"
+                    estado = "JogoB"
+                    tela_JogoB(estado)
+                    
                 if botaovoltar3.collidepoint(pygame.mouse.get_pos()):
                     estado = "Menu"
+                    tela_menu(estado)
 
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RETURN:
@@ -266,8 +275,6 @@ def vitoria(eA1, eA2, eA3, eB1, eB2, eB3, eC1, eC2, eC3, eD1, eD2, eD3):
 
     return False
         
-    
-
 
 def changeplayer(p1, p2, janela_bot):
     if(p1 == False):
@@ -933,18 +940,10 @@ def tela_JogoB(estado):
                     elif (p2 == True):
                         p_win = 'Player 2'
 
-                    fonte = pygame.font.Font(None, 46)
-                    texto = fonte.render(p_win, True, (255,255,255))
-
-                    pygame.draw.rect(janela_bot, (222, 197, 119), (400, 735, 400, 45))
-
-                    pos = texto.get_rect(midleft=(1150 // 2 - 30, 800 // 2 + 360))
-
-                    janela_bot.blit(texto, pos)
 
                     estado = "Vitoria"
 
-                    tela_vitoria(estado)
+                    tela_vitoria(estado, p_win)
 
 
                 
@@ -952,24 +951,39 @@ def tela_JogoB(estado):
         pygame.display.update()
 
 
-def tela_vitoria(estado):
+def tela_vitoria(estado, p_win):
     janela_bot = pygame.display.set_mode((1150,800))
     pygame.display.set_caption("Jogo dos Semáforos")
     janela_bot.blit(win2,(0,0))
+
 
     while estado == "Vitoria":
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
+
+        
+        fonte = pygame.font.Font(None, 46)
+        texto = fonte.render(p_win, True, (255,255,255))
+
+        pygame.draw.rect(janela_bot, (222, 197, 119), (400, 735, 400, 45))
+
+        pos = texto.get_rect(midleft=(1150 // 2 - 30, 800 // 2 + 360))
+
+        janela_bot.blit(texto, pos)
+        
+        pygame.display.update()
+
+
             
             
         
 
 
-if (estado != "Vitoria"):
-    estado = "JogoB"
-    tela_JogoB(estado)
+
+estado = "Capa"
+tela_inicial(estado)
 
 # while True:
 #     if estado == "Capa":
