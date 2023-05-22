@@ -129,6 +129,8 @@ def tela_bot(estado):
     pygame.display.set_caption("Jogo dos Semáforos")
     janela_bot.blit(bot2,(0,0))
 
+    areaj1 = pygame.Rect((206,370),(743,56))
+
     botaovoltar2 = pygame.Rect((261, 528),(312,98))
     botaoplay1 = pygame.Rect((605,528),(312,98))
 
@@ -141,6 +143,20 @@ def tela_bot(estado):
                 quit()
 
             elif event.type == pygame.MOUSEBUTTONDOWN:
+                if areaj1.collidepoint(pygame.mouse.get_pos()):
+                    nome_jogador1 = ''
+                    pygame.draw.rect(janela_bot, (222, 199, 137), (208, 392, 720, 35))
+                    fonte = pygame.font.Font(None, 46)
+                    texto_jogador1 = fonte.render(nome_jogador1, True, (255,255,255))
+
+
+                    posicao_texto_jogador1 = texto_jogador1.get_rect(midleft=(1150 // 2 - 350, 800 // 2 + 6))
+
+                    janela_bot.blit(texto_jogador1, posicao_texto_jogador1)
+
+                    pygame.display.update()
+
+
                 if botaoplay1.collidepoint(pygame.mouse.get_pos()):
                     estado = "JogoA"
                     tela_JogoA(estado,nome_jogador1)
@@ -198,6 +214,30 @@ def tela_1v1(estado):
                 quit()
 
             elif event.type == pygame.MOUSEBUTTONDOWN:
+                if area_j1.collidepoint(pygame.mouse.get_pos()):
+                    nome_jogador1 = ''
+                    pygame.draw.rect(janela_bot, (222, 199, 137), (208, 356, 720, 38))
+                    fonte = pygame.font.Font(None, 46)
+                    texto_jogador1 = fonte.render(nome_jogador1, True, (255,255,255))
+
+                    posicao_texto_jogador1 = texto_jogador1.get_rect(midleft=(1150 // 2 - 350, 800 // 2 - 23))
+
+                    janela_bot.blit(texto_jogador1, posicao_texto_jogador1)
+
+                    pygame.display.update()
+
+                if area_j2.collidepoint(pygame.mouse.get_pos()):
+                    nome_jogador2 = ''
+                    pygame.draw.rect(janela_bot, (222, 199, 137), (210, 511, 720, 38))
+                    fonte = pygame.font.Font(None, 46)
+                    texto_jogador2 = fonte.render(nome_jogador2,True,(255,255,255))
+
+                    posicao_texto_jogador2 = texto_jogador1.get_rect(midleft=(1150 // 2 - 350, 800 // 2 + 124))
+
+                    janela_bot.blit(texto_jogador2, posicao_texto_jogador2)
+
+                    pygame.display.update()
+
                 if botaoplay2.collidepoint(pygame.mouse.get_pos()):
                     estado = "JogoB"
                     tela_JogoB(estado,nome_jogador1,nome_jogador2)
@@ -1217,6 +1257,9 @@ def vitoria(eA1, eA2, eA3, eB1, eB2, eB3, eC1, eC2, eC3, eD1, eD2, eD3):
 
 def changeplayer(p1, p2, janela_bot,nome1,nome2):
     if(p1 == False):
+        if (nome1 == ''):
+            nome1 = 'Player 1'
+
         fonte = pygame.font.Font(None, 46)
         texto_p1 = fonte.render(nome1, True, (255,255,255))
 
@@ -1227,6 +1270,8 @@ def changeplayer(p1, p2, janela_bot,nome1,nome2):
         janela_bot.blit(texto_p1, pos1)
 
     elif(p2 == False):
+        if (nome2 == ''):
+            nome2 = 'Player 2'
         fonte = pygame.font.Font(None, 46)
         texto_p2 = fonte.render(nome2, True, (255,255,255))
 
