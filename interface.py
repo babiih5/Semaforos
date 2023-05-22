@@ -143,7 +143,7 @@ def tela_bot(estado):
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 if botaoplay1.collidepoint(pygame.mouse.get_pos()):
                     estado = "JogoA"
-                    tela_JogoA(estado)
+                    tela_JogoA(estado,nome_jogador1)
                     
                 if botaovoltar2.collidepoint(pygame.mouse.get_pos()):
                     estado = "Menu"
@@ -200,7 +200,7 @@ def tela_1v1(estado):
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 if botaoplay2.collidepoint(pygame.mouse.get_pos()):
                     estado = "JogoB"
-                    tela_JogoB(estado)
+                    tela_JogoB(estado,nome_jogador1,nome_jogador2)
                     
                 if botaovoltar3.collidepoint(pygame.mouse.get_pos()):
                     estado = "Menu"
@@ -246,7 +246,7 @@ def tela_1v1(estado):
 ## BOT  
 
 
-def tela_JogoA(estado):
+def tela_JogoA(estado,nome1):
     janela_bot = pygame.display.set_mode((1150,800))
     pygame.display.set_caption("Jogo dos Semáforos")
     janela_bot.blit(jogo2,(0,0))
@@ -268,6 +268,7 @@ def tela_JogoA(estado):
     D2 = pygame.Rect((800, 336), (182, 138))
     D3 = pygame.Rect((800, 490), (182, 165))
 
+    nomebot = "BOT Diogo"
     #Estados
     eA1 = ''
     eA2 = ''
@@ -297,7 +298,7 @@ def tela_JogoA(estado):
                 pygame.quit()
                 quit()
             
-            changeplayer(p1, p2, janela_bot)
+            changeplayer(p1, p2, janela_bot,nome1,nomebot)
             
             
             
@@ -310,12 +311,12 @@ def tela_JogoA(estado):
                             eA1 = 'G'
 
                             if (p1 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p1 = True
                                 p2 = False
 
                             elif (p2 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p2 = True
                                 p1 = False
 
@@ -327,12 +328,12 @@ def tela_JogoA(estado):
                             eA1 = 'Y'
 
                             if (p1 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p1 = True
                                 p2 = False
 
                             elif (p2 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p2 = True
                                 p1 = False
 
@@ -342,12 +343,12 @@ def tela_JogoA(estado):
                             eA1 = 'R'
 
                             if (p1 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p1 = True
                                 p2 = False
 
                             elif (p2 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p2 = True
                                 p1 = False
 
@@ -360,12 +361,12 @@ def tela_JogoA(estado):
                             eA2 = 'G'
 
                             if (p1 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p1 = True
                                 p2 = False
 
                             elif (p2 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p2 = True
                                 p1 = False
 
@@ -375,12 +376,12 @@ def tela_JogoA(estado):
                             eA2 = 'Y'
 
                             if (p1 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p1 = True
                                 p2 = False
 
                             elif (p2 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p2 = True
                                 p1 = False
 
@@ -390,12 +391,12 @@ def tela_JogoA(estado):
                             eA2 = 'R'
 
                             if (p1 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p1 = True
                                 p2 = False
 
                             elif (p2 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p2 = True
                                 p1 = False
 
@@ -408,12 +409,12 @@ def tela_JogoA(estado):
                             eA3 = 'G'
 
                             if (p1 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p1 = True
                                 p2 = False
 
                             elif (p2 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p2 = True
                                 p1 = False
 
@@ -423,12 +424,12 @@ def tela_JogoA(estado):
                             eA3 = 'Y'
 
                             if (p1 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p1 = True
                                 p2 = False
 
                             elif (p2 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p2 = True
                                 p1 = False
 
@@ -438,12 +439,12 @@ def tela_JogoA(estado):
                             eA3 = 'R'
 
                             if (p1 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p1 = True
                                 p2 = False
 
                             elif (p2 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p2 = True
                                 p1 = False
 
@@ -456,12 +457,12 @@ def tela_JogoA(estado):
                             eB1 = 'G'
 
                             if (p1 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p1 = True
                                 p2 = False
 
                             elif (p2 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p2 = True
                                 p1 = False
 
@@ -471,12 +472,12 @@ def tela_JogoA(estado):
                             eB1 = 'Y'
 
                             if (p1 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p1 = True
                                 p2 = False
 
                             elif (p2 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p2 = True
                                 p1 = False
 
@@ -486,12 +487,12 @@ def tela_JogoA(estado):
                             eB1 = 'R'
 
                             if (p1 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p1 = True
                                 p2 = False
 
                             elif (p2 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p2 = True
                                 p1 = False
 
@@ -504,12 +505,12 @@ def tela_JogoA(estado):
                             eB2 = 'G'
 
                             if (p1 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p1 = True
                                 p2 = False
 
                             elif (p2 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p2 = True
                                 p1 = False
 
@@ -519,12 +520,12 @@ def tela_JogoA(estado):
                             eB2 = 'Y'
 
                             if (p1 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p1 = True
                                 p2 = False
 
                             elif (p2 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p2 = True
                                 p1 = False
 
@@ -534,12 +535,12 @@ def tela_JogoA(estado):
                             eB2 = 'R'
 
                             if (p1 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p1 = True
                                 p2 = False
 
                             elif (p2 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p2 = True
                                 p1 = False
 
@@ -552,12 +553,12 @@ def tela_JogoA(estado):
                             eB3 = 'G'
 
                             if (p1 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p1 = True
                                 p2 = False
 
                             elif (p2 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p2 = True
                                 p1 = False
 
@@ -567,12 +568,12 @@ def tela_JogoA(estado):
                             eB3 = 'Y'
 
                             if (p1 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p1 = True
                                 p2 = False
 
                             elif (p2 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p2 = True
                                 p1 = False
             
@@ -583,12 +584,12 @@ def tela_JogoA(estado):
                             eB3 = 'R'
 
                             if (p1 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p1 = True
                                 p2 = False
 
                             elif (p2 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p2 = True
                                 p1 = False
 
@@ -602,12 +603,12 @@ def tela_JogoA(estado):
                             eC1 = 'G'
 
                             if (p1 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p1 = True
                                 p2 = False
 
                             elif (p2 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p2 = True
                                 p1 = False
 
@@ -617,12 +618,12 @@ def tela_JogoA(estado):
                             eC1 = 'Y'
 
                             if (p1 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p1 = True
                                 p2 = False
 
                             elif (p2 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p2 = True
                                 p1 = False
 
@@ -632,12 +633,12 @@ def tela_JogoA(estado):
                             eC1 = 'R'
 
                             if (p1 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p1 = True
                                 p2 = False
 
                             elif (p2 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p2 = True
                                 p1 = False
 
@@ -650,12 +651,12 @@ def tela_JogoA(estado):
                             eC2 = 'G'
 
                             if (p1 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p1 = True
                                 p2 = False
 
                             elif (p2 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p2 = True
                                 p1 = False
 
@@ -665,12 +666,12 @@ def tela_JogoA(estado):
                             eC2 = 'Y'
 
                             if (p1 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p1 = True
                                 p2 = False
 
                             elif (p2 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p2 = True
                                 p1 = False
 
@@ -680,12 +681,12 @@ def tela_JogoA(estado):
                             eC2 = 'R'
 
                             if (p1 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p1 = True
                                 p2 = False
 
                             elif (p2 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p2 = True
                                 p1 = False
 
@@ -698,12 +699,12 @@ def tela_JogoA(estado):
                             eC3 = 'G'
 
                             if (p1 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p1 = True
                                 p2 = False
 
                             elif (p2 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p2 = True
                                 p1 = False
 
@@ -713,12 +714,12 @@ def tela_JogoA(estado):
                             eC3 = 'Y'
 
                             if (p1 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p1 = True
                                 p2 = False
 
                             elif (p2 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p2 = True
                                 p1 = False
 
@@ -728,12 +729,12 @@ def tela_JogoA(estado):
                             eC3 = 'R'
 
                             if (p1 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p1 = True
                                 p2 = False
 
                             elif (p2 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p2 = True
                                 p1 = False
 
@@ -748,12 +749,12 @@ def tela_JogoA(estado):
                             eD1 = 'G'
 
                             if (p1 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p1 = True
                                 p2 = False
 
                             elif (p2 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p2 = True
                                 p1 = False
 
@@ -763,12 +764,12 @@ def tela_JogoA(estado):
                             eD1 = 'Y'
 
                             if (p1 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p1 = True
                                 p2 = False
 
                             elif (p2 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p2 = True
                                 p1 = False
 
@@ -778,12 +779,12 @@ def tela_JogoA(estado):
                             eD1 = 'R'
 
                             if (p1 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p1 = True
                                 p2 = False
 
                             elif (p2 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p2 = True
                                 p1 = False
 
@@ -795,12 +796,12 @@ def tela_JogoA(estado):
                             eD2 = 'G'
 
                             if (p1 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p1 = True
                                 p2 = False
 
                             elif (p2 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p2 = True
                                 p1 = False
 
@@ -810,12 +811,12 @@ def tela_JogoA(estado):
                             eD2 = 'Y'
 
                             if (p1 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p1 = True
                                 p2 = False
 
                             elif (p2 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p2 = True
                                 p1 = False
 
@@ -825,12 +826,12 @@ def tela_JogoA(estado):
                             eD2 = 'R'
 
                             if (p1 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p1 = True
                                 p2 = False
 
                             elif (p2 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p2 = True
                                 p1 = False
 
@@ -842,12 +843,12 @@ def tela_JogoA(estado):
                             eD3 = 'G'
 
                             if (p1 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p1 = True
                                 p2 = False
 
                             elif (p2 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p2 = True
                                 p1 = False
 
@@ -857,12 +858,12 @@ def tela_JogoA(estado):
                             eD3 = 'Y'
 
                             if (p1 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p1 = True
                                 p2 = False
 
                             elif (p2 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p2 = True
                                 p1 = False
 
@@ -872,12 +873,12 @@ def tela_JogoA(estado):
                             eD3 = 'R'
 
                             if (p1 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p1 = True
                                 p2 = False
 
                             elif (p2 == False):
-                                changeplayer(p1, p2, janela_bot)
+                                changeplayer(p1, p2, janela_bot,nome1,nomebot)
                                 p2 = True
                                 p1 = False
 
@@ -1144,9 +1145,9 @@ def tela_JogoA(estado):
                 janela_bot.blit(win2,(0,0))
 
                 if (p1 == True):
-                    p_win = 'Player 1'
+                    p_win = nome1
                 else:
-                    p_win = 'BOT Diogo'
+                    p_win = nomebot
 
 
                 estado = "Vitoria"
@@ -1214,10 +1215,10 @@ def vitoria(eA1, eA2, eA3, eB1, eB2, eB3, eC1, eC2, eC3, eD1, eD2, eD3):
     return False
         
 
-def changeplayer(p1, p2, janela_bot):
+def changeplayer(p1, p2, janela_bot,nome1,nome2):
     if(p1 == False):
         fonte = pygame.font.Font(None, 46)
-        texto_p1 = fonte.render("Player 1", True, (255,255,255))
+        texto_p1 = fonte.render(nome1, True, (255,255,255))
 
         pygame.draw.rect(janela_bot, (222, 197, 119), (400, 735, 400, 45))
 
@@ -1227,7 +1228,7 @@ def changeplayer(p1, p2, janela_bot):
 
     elif(p2 == False):
         fonte = pygame.font.Font(None, 46)
-        texto_p2 = fonte.render("Player 2", True, (255,255,255))
+        texto_p2 = fonte.render(nome2, True, (255,255,255))
 
         pygame.draw.rect(janela_bot, (222, 197, 119), (400, 735, 400, 45))
 
@@ -1235,7 +1236,7 @@ def changeplayer(p1, p2, janela_bot):
 
         janela_bot.blit(texto_p2, pos2)
 
-def tela_JogoB(estado):
+def tela_JogoB(estado,nome1, nome2):
     janela_bot = pygame.display.set_mode((1150,800))
     pygame.display.set_caption("Jogo dos Semáforos")
     janela_bot.blit(jogo2,(0,0))
@@ -1290,7 +1291,7 @@ def tela_JogoB(estado):
                 pygame.quit()
                 quit()
 
-            changeplayer(p1, p2, janela_bot)
+            changeplayer(p1, p2, janela_bot,nome1,nome2)
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if A1.collidepoint(pygame.mouse.get_pos()):
@@ -1299,12 +1300,12 @@ def tela_JogoB(estado):
                         eA1 = 'G'
 
                         if (p1 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p1 = True
                             p2 = False
 
                         elif (p2 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p2 = True
                             p1 = False
 
@@ -1314,12 +1315,12 @@ def tela_JogoB(estado):
                         eA1 = 'Y'
 
                         if (p1 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p1 = True
                             p2 = False
 
                         elif (p2 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p2 = True
                             p1 = False
 
@@ -1329,12 +1330,12 @@ def tela_JogoB(estado):
                         eA1 = 'R'
 
                         if (p1 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p1 = True
                             p2 = False
 
                         elif (p2 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p2 = True
                             p1 = False
 
@@ -1345,12 +1346,12 @@ def tela_JogoB(estado):
                         eA2 = 'G'
 
                         if (p1 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p1 = True
                             p2 = False
 
                         elif (p2 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p2 = True
                             p1 = False
 
@@ -1360,12 +1361,12 @@ def tela_JogoB(estado):
                         eA2 = 'Y'
 
                         if (p1 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p1 = True
                             p2 = False
 
                         elif (p2 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p2 = True
                             p1 = False
 
@@ -1375,12 +1376,12 @@ def tela_JogoB(estado):
                         eA2 = 'R'
 
                         if (p1 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p1 = True
                             p2 = False
 
                         elif (p2 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p2 = True
                             p1 = False
 
@@ -1391,12 +1392,12 @@ def tela_JogoB(estado):
                         eA3 = 'G'
 
                         if (p1 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p1 = True
                             p2 = False
 
                         elif (p2 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p2 = True
                             p1 = False
 
@@ -1406,12 +1407,12 @@ def tela_JogoB(estado):
                         eA3 = 'Y'
 
                         if (p1 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p1 = True
                             p2 = False
 
                         elif (p2 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p2 = True
                             p1 = False
 
@@ -1421,12 +1422,12 @@ def tela_JogoB(estado):
                         eA3 = 'R'
 
                         if (p1 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p1 = True
                             p2 = False
 
                         elif (p2 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p2 = True
                             p1 = False
 
@@ -1437,12 +1438,12 @@ def tela_JogoB(estado):
                         eB1 = 'G'
 
                         if (p1 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p1 = True
                             p2 = False
 
                         elif (p2 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p2 = True
                             p1 = False
 
@@ -1452,12 +1453,12 @@ def tela_JogoB(estado):
                         eB1 = 'Y'
 
                         if (p1 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p1 = True
                             p2 = False
 
                         elif (p2 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p2 = True
                             p1 = False
 
@@ -1467,12 +1468,12 @@ def tela_JogoB(estado):
                         eB1 = 'R'
 
                         if (p1 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p1 = True
                             p2 = False
 
                         elif (p2 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p2 = True
                             p1 = False
 
@@ -1483,12 +1484,12 @@ def tela_JogoB(estado):
                         eB2 = 'G'
 
                         if (p1 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p1 = True
                             p2 = False
 
                         elif (p2 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p2 = True
                             p1 = False
 
@@ -1498,12 +1499,12 @@ def tela_JogoB(estado):
                         eB2 = 'Y'
 
                         if (p1 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p1 = True
                             p2 = False
 
                         elif (p2 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p2 = True
                             p1 = False
 
@@ -1513,12 +1514,12 @@ def tela_JogoB(estado):
                         eB2 = 'R'
 
                         if (p1 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p1 = True
                             p2 = False
 
                         elif (p2 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p2 = True
                             p1 = False
 
@@ -1529,12 +1530,12 @@ def tela_JogoB(estado):
                         eB3 = 'G'
 
                         if (p1 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p1 = True
                             p2 = False
 
                         elif (p2 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p2 = True
                             p1 = False
 
@@ -1544,12 +1545,12 @@ def tela_JogoB(estado):
                         eB3 = 'Y'
 
                         if (p1 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p1 = True
                             p2 = False
 
                         elif (p2 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p2 = True
                             p1 = False
 
@@ -1559,12 +1560,12 @@ def tela_JogoB(estado):
                         eB3 = 'R'
 
                         if (p1 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p1 = True
                             p2 = False
 
                         elif (p2 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p2 = True
                             p1 = False
 
@@ -1576,12 +1577,12 @@ def tela_JogoB(estado):
                         eC1 = 'G'
 
                         if (p1 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p1 = True
                             p2 = False
 
                         elif (p2 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p2 = True
                             p1 = False
 
@@ -1591,12 +1592,12 @@ def tela_JogoB(estado):
                         eC1 = 'Y'
 
                         if (p1 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p1 = True
                             p2 = False
 
                         elif (p2 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p2 = True
                             p1 = False
 
@@ -1606,12 +1607,12 @@ def tela_JogoB(estado):
                         eC1 = 'R'
 
                         if (p1 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p1 = True
                             p2 = False
 
                         elif (p2 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p2 = True
                             p1 = False
 
@@ -1622,12 +1623,12 @@ def tela_JogoB(estado):
                         eC2 = 'G'
 
                         if (p1 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p1 = True
                             p2 = False
 
                         elif (p2 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p2 = True
                             p1 = False
 
@@ -1637,12 +1638,12 @@ def tela_JogoB(estado):
                         eC2 = 'Y'
 
                         if (p1 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p1 = True
                             p2 = False
 
                         elif (p2 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p2 = True
                             p1 = False
 
@@ -1652,12 +1653,12 @@ def tela_JogoB(estado):
                         eC2 = 'R'
 
                         if (p1 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p1 = True
                             p2 = False
 
                         elif (p2 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p2 = True
                             p1 = False
 
@@ -1668,12 +1669,12 @@ def tela_JogoB(estado):
                         eC3 = 'G'
 
                         if (p1 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p1 = True
                             p2 = False
 
                         elif (p2 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p2 = True
                             p1 = False
 
@@ -1683,12 +1684,12 @@ def tela_JogoB(estado):
                         eC3 = 'Y'
 
                         if (p1 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p1 = True
                             p2 = False
 
                         elif (p2 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p2 = True
                             p1 = False
 
@@ -1698,12 +1699,12 @@ def tela_JogoB(estado):
                         eC3 = 'R'
 
                         if (p1 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p1 = True
                             p2 = False
 
                         elif (p2 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p2 = True
                             p1 = False
 
@@ -1716,12 +1717,12 @@ def tela_JogoB(estado):
                         eD1 = 'G'
 
                         if (p1 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p1 = True
                             p2 = False
 
                         elif (p2 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p2 = True
                             p1 = False
 
@@ -1731,12 +1732,12 @@ def tela_JogoB(estado):
                         eD1 = 'Y'
 
                         if (p1 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p1 = True
                             p2 = False
 
                         elif (p2 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p2 = True
                             p1 = False
 
@@ -1746,12 +1747,12 @@ def tela_JogoB(estado):
                         eD1 = 'R'
 
                         if (p1 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p1 = True
                             p2 = False
 
                         elif (p2 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p2 = True
                             p1 = False
 
@@ -1762,12 +1763,12 @@ def tela_JogoB(estado):
                         eD2 = 'G'
 
                         if (p1 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p1 = True
                             p2 = False
 
                         elif (p2 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p2 = True
                             p1 = False
 
@@ -1777,12 +1778,12 @@ def tela_JogoB(estado):
                         eD2 = 'Y'
 
                         if (p1 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p1 = True
                             p2 = False
 
                         elif (p2 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p2 = True
                             p1 = False
 
@@ -1792,12 +1793,12 @@ def tela_JogoB(estado):
                         eD2 = 'R'
 
                         if (p1 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p1 = True
                             p2 = False
 
                         elif (p2 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p2 = True
                             p1 = False
 
@@ -1808,12 +1809,12 @@ def tela_JogoB(estado):
                         eD3 = 'G'
 
                         if (p1 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p1 = True
                             p2 = False
 
                         elif (p2 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p2 = True
                             p1 = False
 
@@ -1823,12 +1824,12 @@ def tela_JogoB(estado):
                         eD3 = 'Y'
 
                         if (p1 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p1 = True
                             p2 = False
 
                         elif (p2 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p2 = True
                             p1 = False
 
@@ -1838,12 +1839,12 @@ def tela_JogoB(estado):
                         eD3 = 'R'
 
                         if (p1 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p1 = True
                             p2 = False
 
                         elif (p2 == False):
-                            changeplayer(p1, p2, janela_bot)
+                            changeplayer(p1, p2, janela_bot,nome1,nome2)
                             p2 = True
                             p1 = False
 
@@ -1874,9 +1875,9 @@ def tela_JogoB(estado):
                     janela_bot.blit(win2,(0,0))
 
                     if (p1 == True):
-                        p_win = 'Player 1'
+                        p_win = nome1
                     elif (p2 == True):
-                        p_win = 'Player 2'
+                        p_win = nome2
 
 
                     estado = "Vitoria"
