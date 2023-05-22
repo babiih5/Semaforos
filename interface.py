@@ -172,7 +172,16 @@ def tela_bot(estado):
                 if event.key == pygame.K_BACKSPACE:
 
                     nome_jogador1 = nome_jogador1[:-1]
+                    pygame.draw.rect(janela_bot, (222, 199, 137), (208, 392, 720, 35))
+                    fonte = pygame.font.Font(None, 46)
+                    texto_jogador1 = fonte.render(nome_jogador1, True, (255,255,255))
 
+
+                    posicao_texto_jogador1 = texto_jogador1.get_rect(midleft=(1150 // 2 - 350, 800 // 2 + 6))
+
+                    janela_bot.blit(texto_jogador1, posicao_texto_jogador1)
+
+                    pygame.display.update()
 
                 else:
 
@@ -256,9 +265,26 @@ def tela_1v1(estado):
                 elif event.key == pygame.K_BACKSPACE:
                     if jogador_atual == 1:
                         nome_jogador1 = nome_jogador1[:-1]
+                        pygame.draw.rect(janela_bot, (222, 199, 137), (208, 356, 720, 38))
+                        fonte = pygame.font.Font(None, 46)
+                        texto_jogador1 = fonte.render(nome_jogador1, True, (255,255,255))
+
+                        posicao_texto_jogador1 = texto_jogador1.get_rect(midleft=(1150 // 2 - 350, 800 // 2 - 23))
+
+                        janela_bot.blit(texto_jogador1, posicao_texto_jogador1)
+
+                        pygame.display.update()
                     else:
                         nome_jogador2 = nome_jogador2[:-1]
+                        pygame.draw.rect(janela_bot, (222, 199, 137), (210, 511, 720, 38))
+                        fonte = pygame.font.Font(None, 46)
+                        texto_jogador2 = fonte.render(nome_jogador2,True,(255,255,255))
 
+                        posicao_texto_jogador2 = texto_jogador1.get_rect(midleft=(1150 // 2 - 350, 800 // 2 + 124))
+
+                        janela_bot.blit(texto_jogador2, posicao_texto_jogador2)
+
+                        pygame.display.update()
                 else:
                     if jogador_atual == 1:
                         nome_jogador1 += event.unicode
