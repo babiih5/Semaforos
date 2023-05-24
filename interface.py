@@ -1211,6 +1211,8 @@ def tela_JogoA(estado,nome1):
                 janela_bot.blit(win2,(0,0))
 
                 if (p1 == True):
+                    if nome1 == '':
+                        nome1 = 'Player 1'
                     p_win = nome1
                 else:
                     p_win = nomebot
@@ -1946,8 +1948,12 @@ def tela_JogoB(estado,nome1, nome2):
                     janela_bot.blit(win2,(0,0))
 
                     if (p1 == True):
+                        if nome1=='':
+                            nome1= 'Player 1'
                         p_win = nome1
                     elif (p2 == True):
+                        if nome2=='':
+                            nome2 = 'Player 2'
                         p_win = nome2
 
 
@@ -1964,7 +1970,7 @@ def tela_vitoria(estado, p_win):
     janela_bot = pygame.display.set_mode((1150,800))
     pygame.display.set_caption("Jogo dos Semáforos")
     janela_bot.blit(win2,(0,0))
-
+    
 
     ## ativar Sair
     sair = pygame.Rect((817, 146),(312,98))
@@ -1976,6 +1982,7 @@ def tela_vitoria(estado, p_win):
     #pygame.draw.rect(janela_bot, (173, 216, 230), (817, 146, 312, 98))
 
     while estado == "Vitoria":
+        
         fonte = pygame.font.Font(None, 46)
         texto = fonte.render(p_win, True, (255,255,255))
 
