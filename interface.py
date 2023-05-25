@@ -352,11 +352,22 @@ def tela_JogoA(estado,nome1):
     eD2 = ''
     eD3 = ''
 
+    random.seed()
+    opcoes_players = ('p1','p2')
     p1 = False
     p2 = False
     p_win = ''
 
     win = False
+
+    opcao_p = random.choice(opcoes_players)
+
+    if (opcao_p == 'p1'):
+        p1 = False
+        p2 = True
+    elif (opcao_p == 'p2'):
+        p1 = True
+        p2 = False
 
     while estado == "JogoA":
         for event in pygame.event.get():
@@ -1315,6 +1326,8 @@ def tela_JogoB(estado,nome1, nome2):
     janela_bot.blit(jogo2,(0,0))
 
 
+    random.seed()
+    opcoes_players = ('p1','p2')
     p1 = False
     p2 = False
     p_win = ''
@@ -1357,6 +1370,16 @@ def tela_JogoB(estado,nome1, nome2):
     eD1 = ''
     eD2 = ''
     eD3 = ''
+
+
+    opcao_p = random.choice(opcoes_players)
+
+    if (opcao_p == 'p1'):
+        p1 = False
+        p2 = True
+    elif (opcao_p == 'p2'):
+        p1 = True
+        p2 = False
 
     while estado == "JogoB":
         for event in pygame.event.get():
