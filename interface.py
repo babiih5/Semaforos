@@ -1286,7 +1286,6 @@ def vitoria(eA1, eA2, eA3, eB1, eB2, eB3, eC1, eC2, eC3, eD1, eD2, eD3):
 
 
     if (v == True):
-        print("\n\nFim do jogo! Vitória")
 
 
         return True
@@ -1989,7 +1988,6 @@ def tela_JogoB(estado,nome1, nome2):
 
 
 def tela_vitoria(estado, p_win):
-    print(p_win)
     janela_bot = pygame.display.set_mode((1150,800))
     pygame.display.set_caption("Jogo dos Semáforos")
     janela_bot.blit(win2,(0,0))
