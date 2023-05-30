@@ -2000,8 +2000,6 @@ def tela_vitoria(estado, p_win):
 
     menu = pygame.Rect((817, 22),(312,98))
 
-    #pygame.draw.rect(janela_bot, (173, 216, 230), (817, 146, 312, 98))
-
     while estado == "Vitoria":
         
         fonte = pygame.font.Font(None, 46)
