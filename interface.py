@@ -1988,9 +1988,9 @@ def tela_JogoB(estado,nome1, nome2):
 
 
 def tela_vitoria(estado, p_win):
-    janela_bot = pygame.display.set_mode((1150,800))
+    janela_vit = pygame.display.set_mode((1150,800))
     pygame.display.set_caption("Jogo dos Semáforos")
-    janela_bot.blit(win2,(0,0))
+    janela_vit.blit(win2,(0,0))
     
 
     ## ativar Sair
@@ -2005,11 +2005,11 @@ def tela_vitoria(estado, p_win):
         fonte = pygame.font.Font(None, 46)
         texto = fonte.render(p_win, True, (255,255,255))
 
-        pygame.draw.rect(janela_bot, (222, 197, 119), (400, 735, 400, 45))
+        pygame.draw.rect(janela_vit, (222, 197, 119), (400, 735, 400, 45))
 
         pos = texto.get_rect(midleft=(1150 // 2 - 40, 800 // 2 + 360))
 
-        janela_bot.blit(texto, pos)
+        janela_vit.blit(texto, pos)
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
