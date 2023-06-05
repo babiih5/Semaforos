@@ -2007,10 +2007,6 @@ def tela_vitoria(estado, p_win):
                                 pygame.quit
                                 quit()
         
-        
-
-        
-        
         pygame.display.update()
 
 
