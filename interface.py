@@ -64,19 +64,10 @@ def tela_menu(estado):
     pygame.display.set_caption("Jogo dos Semáforos")
     janela_menu.blit(menu2,(0,0))
 
-    ## ativar Botao regras
     botaoregras = pygame.Rect((50,457),(312,98))
-
-    ## ativar botao Sair
     botaoSair = pygame.Rect((423, 646),(312,98))
-
-    ## ativar botao BOT
     botaoBot = pygame.Rect((423, 457),(312,98))
-
-    ## ativar Botao 1vs1
     botao1v1 = pygame.Rect((804, 457),(312,98))
-
-
 
     while estado == "Menu":
         for event in pygame.event.get():
@@ -107,9 +98,7 @@ def tela_regras(estado):
     pygame.display.set_caption("Jogo dos Semáforos")
     janela_regras.blit(regras2,(0,0))
 
-    ## Botao voltar
     voltar = pygame.Rect((419,672),(312,98))
-
 
     while estado == "Regras":
         for event in pygame.event.get():
@@ -130,10 +119,8 @@ def tela_bot(estado):
     janela_bot.blit(bot2,(0,0))
 
     areaj1 = pygame.Rect((206,370),(743,56))
-
     botaovoltar2 = pygame.Rect((261, 528),(312,98))
     botaoplay1 = pygame.Rect((605,528),(312,98))
-
     nome_jogador1 = ""
 
     while estado == "Bot":
@@ -191,10 +178,7 @@ def tela_bot(estado):
 
         fonte = pygame.font.Font(None, 46)
         texto_jogador1 = fonte.render(nome_jogador1, True, (255,255,255))
-
-
         posicao_texto_jogador1 = texto_jogador1.get_rect(midleft=(1150 // 2 - 350, 800 // 2 + 6))
-
         janela_bot.blit(texto_jogador1, posicao_texto_jogador1)
 
         pygame.display.update()
@@ -211,7 +195,7 @@ def tela_1v1(estado):
 
     area_j1 = pygame.Rect((206,344),(743,56))
     area_j2 = pygame.Rect((206,495),(743,56))
-    #pygame.draw.rect(janela_bot, (173, 216, 230), (206, 495, 743, 56))
+
     jogador_atual = 1
     nome_jogador1 = ""
     nome_jogador2 = ""
@@ -1333,9 +1317,7 @@ def tela_JogoB(estado,nome1, nome2):
 
     win =  False
 
-    #pygame.draw.rect(janela_bot, (173, 216, 230), (400, 735, 400, 45))
-    #janela_bot.blit(vermelho2,(367, 310))
-
+    
     ## Areas de Jogo
     A1 = pygame.Rect((170, 163), (186, 158))
     A2 = pygame.Rect((170, 336), (186, 138))
